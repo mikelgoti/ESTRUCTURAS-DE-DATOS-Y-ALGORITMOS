@@ -1,4 +1,7 @@
-  # ALGORITMOS_DE_BUSQUEDA
+  # ALGORITMOS DE BUSQUEDA Y ORDENACION
+  Algoritmos de busqueda
+  ----------------------
+  
   Hay dos tipos de algoritmo de busqueda:
 
   BUSQUEDA_LINEAL
@@ -9,9 +12,9 @@
   ----------------
   ![binary_Search](https://user-images.githubusercontent.com/47355750/190211275-a47254c4-3a0c-45ff-8629-4663e4039726.png)
 
+  Algoritmos de ordenacion (sorting)
+  ----------------------------------
 
-  #ALGORITMOS_DE_ORDEANCION(SORTING)
-  
   SELECCION
   ---------
   
@@ -23,6 +26,9 @@
   
   RAPIDO
   ------
+  
+  MERGE
+  -----
   
   
   El código de los algoritmos de búsqueda mas usuales y útiles.
