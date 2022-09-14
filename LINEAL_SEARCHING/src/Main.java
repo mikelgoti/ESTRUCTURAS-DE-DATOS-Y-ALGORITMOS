@@ -1,7 +1,7 @@
 
 public class Main {
 	
-	//Lista de numeros para buscar
+	//Lista de numeros para buscars
 	private static final int listaNumeros [] = {0,1,2,3,4,5,6,7,8,9};
 	
 	public static void main(String[] args) {
