@@ -2,7 +2,7 @@
 public class Main {
 	
 	//Lista de numeros para buscar
-	private static final int listaNumeros [] = {0,1,2,3,4,5,6,7,8,9,};
+	private static final int listaNumeros [] = {0,1,2,3,4,5,6,7,8,9};
 	
 	public static void main(String[] args) {
 		/**
@@ -14,17 +14,24 @@ public class Main {
 		 **/
 		
 		//Imaginemos que queremos econtrar el valor 6
-		int n = 6;
+		int n = 10;
 		int ite = 0;//Variable que llevara la cuenta de las posiciones que se compararan. Los vectores comienzas por 0.
+		int max = listaNumeros[listaNumeros.length-1];
 		
 		//ALGORITMO DE BUSQUEDA LINEAL
-		while(listaNumeros[ite] != n) {
+		try {
+			while(listaNumeros[ite] != n) {
+				try {Thread.sleep(2000);}catch(Exception e){};
+				System.err.println("El numero "+n+" no esta en la posicion "+ite+".");
+				ite++;
+			}
 			try {Thread.sleep(2000);}catch(Exception e){};
-			System.out.println("El numero "+n+" no esta en la posicion "+ite+".");
-			ite++;
-		}
-		
+		}catch(ArrayIndexOutOfBoundsException e) {
+			System.err.println("Todas los numeros de la lista comparados.\nEl numero "+n+" no se encuentra en la lista.");
+		};
+		if(ite <= max) {
 		System.out.println("El numero "+n+" esta en la posicion "+ite+" de la listaNumeros.");
+		}
 	}
 	
 	/**
