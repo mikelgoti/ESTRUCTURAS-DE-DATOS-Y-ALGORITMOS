@@ -10,11 +10,27 @@ public class Main {
 	//LA BUSQUEDA FUNIONA PARA AMBAS 
 	static String listaNombres [] = {"Mikel","Ane","Maialen","Joseba","Ellaku","Romero","Jon","Aimar","Goros","Urquiza","Karmele","Hugo"};
 	static Integer listaNumeros [] = {1,2,3,4,5,6,7,8,9,10,11};
+	static Integer listaNums [];
 	
 	public static void main(String[] args) {
 		
+		listaNums = new Integer [10000];
+		
+		for(int ite = 0 ; ite < listaNums.length ; ite++) {
+			listaNums[ite] = ite;
+		}
+		System.out.println("Lista generada");
+		
+		long start = System.nanoTime();//NANOSEGUNDOS
+		long start1 = System.currentTimeMillis();//MILISEGUNDOS
 		//llamada al metodo
-		System.out.println(binarySearch(listaNumeros,0,listaNumeros.length-1,11));//mediante la recursividad
+		System.out.println(binarySearch(listaNums,0,listaNums.length-1,9999));//mediante la recursividad
+		
+		long end1 = System.currentTimeMillis();
+		long end = System.nanoTime();
+		System.out.println("\t\t\tT(s)\t\tT(ns)");
+		System.out.printf("%s\t%.5f\t\t%.5f\n","Tiempo trasncurrido: ",
+				(double) (end1 - start1) / 1000,(double) (end - start) / 1000000000);
 	}
 	
 	/**

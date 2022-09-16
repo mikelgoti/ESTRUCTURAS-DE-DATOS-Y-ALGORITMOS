@@ -2,7 +2,7 @@
 public class Main {
 	
 	//Lista de numeros para buscars
-	private static final Integer listaNumeros [] = {0,1,2,3,4,5,6,7,8,9};
+	private static Integer listaNumeros [];
 	
 	public static void main(String[] args) throws InterruptedException {
 		/**
@@ -13,42 +13,24 @@ public class Main {
 		 * 
 		 **/
 		
-		//Imaginemos que queremos econtrar el valor 6
-		/*int n = 10;
-		int ite = 0;//Variable que llevara la cuenta de las posiciones que se compararan. Los vectores comienzas por 0.
-		int max = listaNumeros[listaNumeros.length-1];
+		listaNumeros = new Integer [100000000];
 		
-		//ALGORITMO DE BUSQUEDA LINEAL
-		try {
-			while(listaNumeros[ite] != n) {
-				try {Thread.sleep(2000);}catch(Exception e){};
-				System.err.println("El numero "+n+" no esta en la posicion "+ite+".");
-				ite++;
-			}
-			try {Thread.sleep(2000);}catch(Exception e){};
-		}catch(ArrayIndexOutOfBoundsException e) {
-			System.err.println("Todas los numeros de la lista comparados.\nEl numero "+n+" no se encuentra en la lista.");
-		};
-		if(ite <= max) {
-		System.out.println("El numero "+n+" esta en la posicion "+ite+" de la listaNumeros.");
-		}*/
-		
-		
-		//System.out.println(linealSearch(listaNumeros,0,9,11));
-		
-		Stopwatch reloj = new Stopwatch();       // Inicialización
-		System.out.println("Tiempo inicial: " + reloj.elapsedTime());
-		System.out.println("Un poco más tarde: " + reloj.elapsedTime());
-
-		int x = 1;
-		for (int i = 1; i < 2000000; i++) {
-			x = x * i;
-			Thread.sleep(i);
-			System.out.printf("%.2f\n",reloj.elapsedTime());
+		for(int ite = 0 ; ite < listaNumeros.length ; ite++) {
+			listaNumeros[ite] = ite;
 		}
-		System.out.println(reloj.elapsedTime());
-
+		System.out.println("Lista generada");
 		
+		long start = System.nanoTime();//NANOSEGUNDOS
+		long start1 = System.currentTimeMillis();//MILISEGUNDOS
+		
+		System.out.println(linealSearch(listaNumeros,0,listaNumeros.length,99999999));
+		
+		long end1 = System.currentTimeMillis();
+		long end = System.nanoTime();
+		System.out.println("\t\t\tT(s)\t\tT(ns)");
+		System.out.printf("%s\t%.5f\t\t%.5f\n","Tiempo trasncurrido: ",
+				(double) (end1 - start1) / 1000,(double) (end - start) / 1000000000);
+	
 	}
 	
 	
