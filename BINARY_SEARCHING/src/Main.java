@@ -27,6 +27,11 @@ public class Main {
 	 **/
 	public static <T extends Comparable <T>> boolean binarySearch(T[] data, int min, int max, T target) {//EXTIENDE LA CLASE COMPARABLE PARA ACEPTAR OBJETOS COMPRABLES
 		
+		/*
+		 *SE PODRIA MEJORAR EL METODO
+		 *-NO HACE FALTA PASARLE EL MINIMO NI EL MAXIMO SE PUEDEN SACAR DE LA PROPIA LISTA
+		 *-NO HACE FALTA EL ULTIMO ELSE IF, CON UN SIMPLE ELSE BASTA
+		 **/
 		//ORDENA LA LISTA DE DATOS DE MAYOR A MENOR
 		Arrays.sort(data);
 		
