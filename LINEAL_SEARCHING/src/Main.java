@@ -2,7 +2,7 @@
 public class Main {
 	
 	//Lista de numeros para buscars
-	private static final int listaNumeros [] = {0,1,2,3,4,5,6,7,8,9};
+	private static final Integer listaNumeros [] = {0,1,2,3,4,5,6,7,8,9};
 	
 	public static void main(String[] args) {
 		/**
@@ -14,7 +14,7 @@ public class Main {
 		 **/
 		
 		//Imaginemos que queremos econtrar el valor 6
-		int n = 10;
+		/*int n = 10;
 		int ite = 0;//Variable que llevara la cuenta de las posiciones que se compararan. Los vectores comienzas por 0.
 		int max = listaNumeros[listaNumeros.length-1];
 		
@@ -31,8 +31,12 @@ public class Main {
 		};
 		if(ite <= max) {
 		System.out.println("El numero "+n+" esta en la posicion "+ite+" de la listaNumeros.");
-		}
+		}*/
+		
+		
+		System.out.println(linealSearch(listaNumeros,0,9,11));
 	}
+	
 	
 	/**
 	 *Este tipo de algoritmo es muy facil de implementar pero es poco efectivo para conjuntos de datos grandes. 
@@ -43,4 +47,17 @@ public class Main {
 	 *La eficacia del algoritmo de busqueda lineal esta directamente ligado con el numero de datos en los que puede residir el elemento a buscar.
 	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 **/
+	
+	//VERSION GENERICA
+	public static <T> boolean linealSearch(T[] lista,int min, int max, T i) {
+		
+		int index = min;
+		boolean found = false;
+		
+		while(!found && index <= max) {
+			found = lista[index].equals(i);
+			index++;
+		}
+		return found;
+	}
 }
