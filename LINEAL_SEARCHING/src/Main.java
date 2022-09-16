@@ -4,7 +4,7 @@ public class Main {
 	//Lista de numeros para buscars
 	private static final Integer listaNumeros [] = {0,1,2,3,4,5,6,7,8,9};
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		/**
 		 * 
 		 *La busqueda lineal recorre todos los elementos de la lista "listaNumeros"
@@ -34,7 +34,21 @@ public class Main {
 		}*/
 		
 		
-		System.out.println(linealSearch(listaNumeros,0,9,11));
+		//System.out.println(linealSearch(listaNumeros,0,9,11));
+		
+		Stopwatch reloj = new Stopwatch();       // Inicialización
+		System.out.println("Tiempo inicial: " + reloj.elapsedTime());
+		System.out.println("Un poco más tarde: " + reloj.elapsedTime());
+
+		int x = 1;
+		for (int i = 1; i < 2000000; i++) {
+			x = x * i;
+			Thread.sleep(i);
+			System.out.printf("%.2f\n",reloj.elapsedTime());
+		}
+		System.out.println(reloj.elapsedTime());
+
+		
 	}
 	
 	
