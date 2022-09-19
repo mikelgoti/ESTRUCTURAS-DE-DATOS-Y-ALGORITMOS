@@ -1,7 +1,8 @@
 
 /*
  *ALGORITMO DE LA BURBUJA O BUBBLE SORT
- *El algoritmo compara de dos en dos las posciones y is no estan en orden las intercambia.
+ *El algoritmo compara de dos en dos las posciones y si no estan en orden las intercambia.
+ *El algoritmo empuja hacia la parte de atras el numero con el valor mas alto.
  **/
 public class Main {
 	//LISTA DE EJEMPLO
