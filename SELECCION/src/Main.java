@@ -1,15 +1,15 @@
 
-/**
+/*
  *CLASE PARA IMPLEMENTAR EL ALGORITMO SELECTION SORT
  * 
  *El algoritmo de seleccion escanea toda la lista para encontrar el valor menor.
  *Despues intercambia la primera posicion de la lista con ese valor. 
  *Y repite el proceso pero empezando desde la segunda posicion. Ya que la primera ya esta posicionada.
  * 
- **/
+ */
 public class Main {
 	
-	/*
+	/**
 	 *NOTAS: 
 	 *-Solamente esta implementado con numeros enteros. Para hacerlo con cadenas hay que utilizar compareTo().
 	 *-Se puede mejorar el algoritmo para que calcule el minimo de la lista y despues lo intercambie en la misma iteracion,
@@ -23,7 +23,7 @@ public class Main {
 		System.out.println("Sin ordenar la lista");
 		
 		for(int ln : listaNumeros) {
-			System.out.println("\t"+ln);
+			System.out.print("\t"+ln);
 		}
 		
 		System.out.println("\nCon la lista ordenada");
