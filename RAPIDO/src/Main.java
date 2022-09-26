@@ -1,4 +1,13 @@
-/*ALGORITMO RAPIDO O QUICKSORT*/
+/*ALGORITMO RAPIDO O QUICKSORT
+ *Este algoritmo escoge un numero de la lista de datos como pivote.
+ *En este caso escoge el valor mas alto de la lista el indice mas alto.
+ *Despues asigna dos punteros con los valores minimos y maximos de la lista.
+ *El puntero con el valor minimo recorre la lista desde la izquierda el comienzo.
+ *El otro puntero con el valor maximo la recorre por el otro extremo el derecho.
+ *La recorren hasta que los dos se encuentren. Si en el proceso antes de que se encuentren
+ *digamos que el puntero izquierdo encuentra un valor mas grande que el pivote y el puntero derecho
+ *encuentra un valor menor que el puntero estos se intercambian.
+ *Una vez la primera iteracion termina con el primer pivote se ejecuta de manera recursiva.*/
 
 
 public class Main {

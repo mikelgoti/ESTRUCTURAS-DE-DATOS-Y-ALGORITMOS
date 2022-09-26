@@ -2,7 +2,9 @@
 /*
  *ALGORITMO DE LA BURBUJA O BUBBLE SORT
  *El algoritmo compara de dos en dos las posciones y si no estan en orden las intercambia.
- *El algoritmo empuja hacia la parte de atras el numero con el valor mas alto.
+ *El algoritmo empuja hacia la ultima posicion de la lista el numero con el valor mas alto.
+ *Por eso se le llama burbuja al algoritmo. Una vez que el elemento de la lista con el valor mas alto
+ *se encuentra al final de la lista. El algoritmo ejecuta otra iteracion pero hasta la posicion ante ultima.
  **/
 public class Main {
 	//LISTA DE EJEMPLO
