@@ -76,7 +76,6 @@ public class Sll {
         }
 
         head = head.next;
-
         size--;
     }
 
@@ -90,6 +89,26 @@ public class Sll {
             tail.next = n;
             tail = n;
             size++;
+    }
+
+    public void deleteLast(){
+        if(isEmpty()){
+            System.out.println(nombre+MSJ_EMPTY);
+            return;
+        }
+
+        if(size == 1){
+            deleteFirst();
+            return;
+        }
+
+        Node temp = head;
+        while(temp.next != tail){
+            temp = temp.next;
+        }
+        temp.next = null;
+        tail = temp;
+        size--;
     }
 
     /**
@@ -157,6 +176,50 @@ public class Sll {
         temp.next = n;
 
         size++;
+    }
+
+    /**
+     * DELETE with index
+     * @param i = index
+     * ALGORITMO
+     * ---------
+     * 1. Tratar error de la lista vacia.
+     * 2. Si la lista solo contiene un elemento borrarlo o si el index es 0 borrar el primero.
+     * 3.a. Si no es ni el paso 1 ni el 2. Definir un nodo temporal -> temp con la referencia del principio.
+     *    Recorrer hasta el index-1 para encontrar la referencia que se tiene que cambiar.
+     *    Definr otro nodo temporal -> temp1 con la referencia del nodo que vamos a borrar el que coincide con el index.
+     * 4. Tratar caso exceptional de la instruccion 3. Cuando el index es la ultima posicion, es decir, cuando no hay
+     *    siguiente al que apuntar.Se asigna null a la referencia del nodo temporal -> temp porque es el ultimo.
+     *    Y se asigna como tail.Decrementar longitud y salir.
+     * 3.b Si no es la ultima posicion la que intentamos borrar. Al borrar el nodo se rompe la lista para evitar eso
+     *     el puntero del nodo borrado es el que apunta al siguiente, esa referencia se asigna al la referencia del nodo
+     *     anterior que apunta al borrado. Despues decrementamos.
+     * */
+    public void deleteIndex(int i){
+
+        if(isEmpty()){
+            System.out.println(nombre+MSJ_EMPTY);
+        }
+
+        if(size == 1 || i == 0){
+            deleteFirst();
+            return;
+        }
+
+        Node temp = head;
+        for(int ite = 0 ; ite < i-1 ; ite++){
+            temp = temp.next;
+        }
+
+        Node temp1 = temp.next;
+        if(temp1.next == null){
+            temp.next = null;
+            tail = temp;
+            size--;
+            return;
+        }
+        temp.next = temp1.next;
+        size--;
     }
 
     /**
