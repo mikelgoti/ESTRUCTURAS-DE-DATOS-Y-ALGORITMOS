@@ -1,12 +1,20 @@
   # ESTRUCTURAS DE DATOS Y ALGORITMOS
   
-  # INDICE
+  # INDICE DEL CONTENIDO
+  
   ## ALGORITMOS DE BUSQUEDA
- 
-    - Quickshort 
-    - blabla
+    
+    - Busqueda Lineal
+    - Busqueda Binaria
   
+  ## ALGORITMOS DE BUSQUEDA
   
+    - Ordenamiento por Selección(Selection Sort)
+    - Ordenamiento por Inserción(Insertion Sort)
+    - Ordenamiento mediante el metodo de la burbuja(Bubble Sort)
+    - Ordenamiento rapido(Quick Sort)
+    - Ordenamiento por Mezcla(Merge Sort)
+    
   ## LIKED LIST
   ![image](https://user-images.githubusercontent.com/47355750/196815927-1e9b5b40-419a-4a10-b022-51de4d5a39cc.png)
 
