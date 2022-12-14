@@ -59,37 +59,35 @@ public class Main {
 
         csll1.printList();//imprimimos la lista
 
-        csll1.addInOrder(0);
+        csll1.addInOrder(0);//Inserta un nodo en orden segun el tipo de dato que tenga
 
-        csll1.printList();
+        csll1.printList();//imprimimos la lista
 
-        csll1.addInOrder(7);
+        csll1.addInOrder(7);//Inserta un nodo en orden segun el tipo de dato que tenga
 
-        csll1.printList();
+        csll1.printList();//imprimimos la lista
 
-        csll1.addInOrder(3);
+        csll1.addInOrder(3);//Inserta un nodo en orden segun el tipo de dato que tenga
 
-        csll1.printList();
+        csll1.printList();//imprimimos la lista
 
-        csll1.addIn(3,10);
+        csll1.addIn(3,10);//inserta el nodo con el dato pasado en la posicion pasada
 
-        csll1.printList();
+        csll1.printList();//imprimimos la lista
 
-        csll1.addIn(9,100);
+        csll1.addIn(9,8);//inserta el nodo con el dato pasado en la posicion pasada
 
-        csll1.printList();
+        csll1.printList();//imprimimos la lista
 
-        csll1.addIn(1,69);
+        csll1.addIn(11,9);//inserta el nodo con el dato pasado en la posicion pasada
 
-        csll1.printList();
+        csll1.printList();//imprimimos la lista
 
-        csll1.deleteNodeIn(1);
+        csll1.deleteNodeIn(11);//borra el nodo de la posicion especificada
 
-        csll1.printList();
+        csll1.printList();//imprimimos la lista
 
-        csll1.deleteNodeIn(2);
 
-        csll1.printList();
 
 
     }

@@ -236,6 +236,7 @@ public class CSLL {
      * NOTE: LAS POSICIONES EN LA LISTA EMPIEZAN A CONTAR POR 1. EN VEZ DE SER 0 EL PRIMER NODO ES 1.
      **/
     public void deleteNodeIn(int pos){
+
         if(isEmpty()){
             return;
         }
@@ -247,10 +248,16 @@ public class CSLL {
             return;
         }
 
-        Node temp = head.next;
+        Node temp = head;
 
         for(int ite = 1 ; ite < pos - 1 ; ite++){
             temp = temp.next;
+        }
+        if(temp.next == tail){
+            temp.next = temp.next.next;
+            tail = temp;
+            size--;
+            return;
         }
         temp.next = temp.next.next;
         size--;
@@ -272,12 +279,12 @@ public class CSLL {
             return;
         }
 
-        if(pos == size){
+        if(pos >= size){
             addLast(data);
             return;
         }
 
-        Node temp = head.next;
+        Node temp = head;
 
         for(int ite = 2 ; ite < pos ; ite++){
             temp = temp.next;
