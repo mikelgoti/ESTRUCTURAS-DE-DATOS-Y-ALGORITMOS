@@ -8,13 +8,15 @@ public class CSLL {
      * */
     Node head,tail;
     int size;
+    String name;
 
     /**
      * Constructor que inicializa la lista.
      * Inicializa la variable size en 0 ya que al principio no hay elementos en la lista.
      * */
-    public CSLL()
+    public CSLL(String name)
     {
+        this.name = name;
         this.size = 0;
     }
 
@@ -33,6 +35,8 @@ public class CSLL {
      *       Las dos porciones de codigo realizan los mismo, pero la primera porcion es mas comprensiva visualmente.
      * */
     public void printList(){
+
+        System.out.println(name);
 
         if(size == 0 && head == null && tail == null){//Checkear lista vacia
             System.out.print("La lista ligada simple circular esta vacia!\n\n");
@@ -64,6 +68,7 @@ public class CSLL {
         System.out.println();
         if(cont == 1){
             System.out.print("'-<--'");
+            imprimirCaracteristicas();
             System.out.println("\n");
             return;
         }
@@ -78,6 +83,7 @@ public class CSLL {
                 System.out.print("<----");
             }
         }
+        imprimirCaracteristicas();
         System.out.println("\n");//(*)
 
         /*Node temp = head;
@@ -87,6 +93,13 @@ public class CSLL {
         }while(temp != head);
 
         System.out.println("\n");*/
+    }
+
+    private void imprimirCaracteristicas(){
+        System.out.println();
+        System.out.println("SIZE OF THE LIST: "+size);
+        System.out.println("HEAD: "+head.getData());
+        System.out.println("TAIL: "+tail.getData());
     }
 
     /**
@@ -211,6 +224,109 @@ public class CSLL {
             }
             temp = temp.next;
         }while(temp != head);
+    }
+
+    /**
+     * MODIFICADOR: public
+     * NOMBRE DEL METODO: deleteNodeIn()
+     * TIPO DE METODO: void
+     * PARAMETROS: 1 -> int pos
+     *
+     * DESCRIPCION: Metodo que elimia el nodo en la posicion especificada en el parametro.
+     * NOTE: LAS POSICIONES EN LA LISTA EMPIEZAN A CONTAR POR 1. EN VEZ DE SER 0 EL PRIMER NODO ES 1.
+     **/
+    public void deleteNodeIn(int pos){
+        if(isEmpty()){
+            return;
+        }
+
+        if(pos == 1){
+            head = head.next;
+            tail.next = head;
+            size--;
+            return;
+        }
+
+        Node temp = head.next;
+
+        for(int ite = 1 ; ite < pos - 1 ; ite++){
+            temp = temp.next;
+        }
+        temp.next = temp.next.next;
+        size--;
+    }
+
+    /**
+     * MODIFICADOR: public
+     * NOMBRE DEL METODO: addIn()
+     * TIPO DE METODO: void
+     * PARAMETROS: 2 -> int pos, int data
+     *
+     * DESCRIPCION: inserts the node in the correct place according to the position passed as the parameter.
+     * NOTE: POSITIONS IN THE LIST STARTS COUNTING BY 1. INSTEAD OF BEING 0 THE FIRST NODE IS 1.
+     **/
+    public void addIn(int pos, int data){
+
+        if(pos == 1 || isEmpty()){
+            addFirst(data);
+            return;
+        }
+
+        if(pos == size){
+            addLast(data);
+            return;
+        }
+
+        Node temp = head.next;
+
+        for(int ite = 2 ; ite < pos ; ite++){
+            temp = temp.next;
+        }
+        Node node = new Node(data);
+        node.next = temp.next;
+        temp.next = node;
+        size++;
+    }
+
+    /**
+     * MODIFICADOR: public
+     * NOMBRE DEL METODO: insertInOrder()
+     * TIPO DE METODO: void
+     * PARAMETROS: 1 -> int data
+     *
+     * DESCRIPCION: inserts the node in the correct place of the list according to his data value.
+     **/
+    public void addInOrder(int data) {
+
+        if(isEmpty()){
+           addFirst(data);
+           return;
+        }
+
+        Node temp =tail;
+
+        do{
+            if(temp.next == tail){
+                addLast(data);
+                return;
+            }
+            if(temp.next.getData() > data){
+                Node node = new Node(data);
+                size++;
+                if(temp.next == head){
+                    node.next = temp.next;
+                    temp.next = node;
+                    head = node;
+                    break;
+                }
+                else{
+                    node.next = temp.next;
+                    temp.next = node;
+                    break;
+                }
+            }
+            temp = temp.next;
+        }while(temp != tail);
     }
 
     /**

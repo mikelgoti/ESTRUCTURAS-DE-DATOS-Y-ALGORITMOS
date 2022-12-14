@@ -1,8 +1,8 @@
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        CSLL csll1 = new CSLL();//Instancia de la clase simple ligada circular
+        CSLL csll1 = new CSLL("Lista Prueba");//Instancia de la clase simple ligada circular
 
         csll1.printList();//imprimimos la lista
 
@@ -58,6 +58,39 @@ public class Main {
         csll1.deleteNode(3);//Borramos un nodo del medio
 
         csll1.printList();//imprimimos la lista
+
+        csll1.addInOrder(0);
+
+        csll1.printList();
+
+        csll1.addInOrder(7);
+
+        csll1.printList();
+
+        csll1.addInOrder(3);
+
+        csll1.printList();
+
+        csll1.addIn(3,10);
+
+        csll1.printList();
+
+        csll1.addIn(9,100);
+
+        csll1.printList();
+
+        csll1.addIn(1,69);
+
+        csll1.printList();
+
+        csll1.deleteNodeIn(1);
+
+        csll1.printList();
+
+        csll1.deleteNodeIn(2);
+
+        csll1.printList();
+
 
     }
 }
